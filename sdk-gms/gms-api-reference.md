@@ -366,13 +366,19 @@ Import aar package into Android Studio
 
 Copy the araar package [SdkApiJar.aar] to the project directory /app/libs.
 
+![SC1 / SK1 / SK1-15 GMS SdkApi Detailed Reference - gms-image1.png](./images/gms-image1.png)
+
 Add references to build.gradle files in the app.
+
+![SC1 / SK1 / SK1-15 GMS SdkApi Detailed Reference - gms-image2.png](./images/gms-image2.png)
 
 Register SdkApi.
 
 Use the functions of the SdkApi-related class interface.
 
 ### API Registration Flowchart
+
+![SC1 / SK1 / SK1-15 GMS SdkApi Detailed Reference - gms-image3.png](./images/gms-image3.png)
 
 #### API Module Classification
 
@@ -395,7 +401,9 @@ Use the functions of the SdkApi-related class interface.
 
 Interface name:
 
+```java
 void newInstance(Context context)
+```
 
 Parameter :
 
@@ -407,7 +415,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.newInstance(this);
+```
 
 Remarks :
 
@@ -417,7 +427,9 @@ Remarks :
 
 Interface name:
 
+```java
 SdkApi getInstance()
+```
 
 Parameter :
 
@@ -431,7 +443,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi api = SdkApi.getInstance();
+```
 
 Remarks :
 
@@ -441,7 +455,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean  getServiceConnectionStatus()
+```
 
 Parameter :
 
@@ -455,7 +471,9 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret = SdkApi.getInstance().getServiceConnectionStatus();
+```
 
 Remarks :
 
@@ -465,7 +483,9 @@ After the--newInstance function completes, wait approximately 2 seconds for the 
 
 Interface name:
 
+```java
 void  unBindApiSdkService()
+```
 
 Parameter :
 
@@ -479,7 +499,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().unBindApiSdkService();
+```
 
 Remarks :
 
@@ -493,7 +515,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getApiVersion()
+```
 
 Parameter :
 
@@ -521,7 +545,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getApiSdkServiceVersion()
+```
 
 Parameter :
 
@@ -549,7 +575,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getFirmwareVersion()
+```
 
 Parameter :
 
@@ -576,7 +604,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getChipName()
+```
 
 Parameter :
 
@@ -603,7 +633,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getSerialNumber()
+```
 
 Parameter :
 
@@ -630,7 +662,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getDDRSize()
+```
 
 Parameter :
 
@@ -657,7 +691,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getEMMCSize()
+```
 
 Parameter :
 
@@ -684,7 +720,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setLcdDensity(int density)
+```
 
 Parameter :
 
@@ -698,7 +736,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().DeviceInfo().setLcdDensity ( density);
+```
 
 Remarks :
 
@@ -708,7 +748,9 @@ Some systems need to restart to take effect
 
 Interface name:
 
+```java
 int getLcdDensity()
+```
 
 Parameter :
 
@@ -722,7 +764,9 @@ Returned value :
 
 Code example:
 
+```java
 int density = SdkApi.getInstance().DeviceInfo().getLcdDensity()
+```
 
 Remarks :
 
@@ -732,7 +776,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getProperty(String key, String default)
+```
 
 Parameter :
 
@@ -762,7 +808,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getEthMac()
+```
 
 Parameter :
 
@@ -776,7 +824,9 @@ Returned value :
 
 Code example:
 
+```java
 String mac =  SdkApi.getInstance().DeviceInfo().getEthMac()
+```
 
 Remarks :
 
@@ -790,7 +840,9 @@ When a board has multiple MAC addresses, the results are separated by @. For exa
 
 Interface name:
 
+```java
 String getDDRAvailableSize()
+```
 
 Parameter :
 
@@ -817,7 +869,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getEMMCAvailableSize()
+```
 
 Parameter :
 
@@ -843,7 +897,9 @@ Remarks :
 ### 2.14 Set Device Product Information
 
 Method Name:
+```java
 void setProductInfo(int type, String data)
+```
 
 Parameters:
 
@@ -856,7 +912,10 @@ Return Value:
 -- None
 
 Code Example:
+
+```java
 SdkApi.getInstance().DeviceInfo().setProductInfo(1, "1234")
+```
 
 Remarks :
 
@@ -865,7 +924,9 @@ Remarks :
 ### 2.15 Get Device Product Information
 
 Method Name:
+```java
 String getProductInfo(int type)
+```
 
 Parameters:
 
@@ -879,8 +940,9 @@ Return Value:
 | :--- | :--- | :--- |
 | Return Value | String | Node value |
 
-```java
 Code Example:
+
+```java
 String value = SdkApi.getInstance().DeviceInfo().getProductInfo(1)
 Example: 1234
 ```
@@ -907,7 +969,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean setScreenRotate(int screen, int rotate)
+```
 
 Parameter :
 
@@ -924,8 +988,10 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret = SdkApi.getInstance().Display().setScreenRotate(
 ApiTool.Screen.ALL, 90)
+```
 
 Remarks :
 
@@ -935,7 +1001,9 @@ Restart the system to take effect
 
 Interface name:
 
+```java
 void getScreenRotate(int screen, ResultCallback<ResultInfo<Integer>> cb )
+```
 
 Parameter :
 
@@ -954,10 +1022,10 @@ Code example:
 
 ```java
 SdkApi.getInstance().Display().getScreenRotate(ApiTool.Screen.ALL,
-    new ResultCallback<ResultInfo<Integer>>() {
-        @Override
-        public void onMsg(Integer val) {
-        }
+new ResultCallback<ResultInfo<Integer>>() {
+    @Override
+    public void onMsg(Integer val) {
+    }
 })
 ```
 
@@ -969,7 +1037,9 @@ If the motherboard has dual outputs, setting screen to all returns the current m
 
 Interface name:
 
+```java
 boolean setScreenOnoff(int screen, boolean onoff)
+```
 
 Parameter :
 
@@ -986,8 +1056,10 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret = SdkApi.getInstance().Display().setScreenOnoff(
 ApiTool.Screen.ALL, true)
+```
 
 Remarks :
 
@@ -997,7 +1069,9 @@ Remarks :
 
 Interface name:
 
+```java
 void getScreenOnoff(int screen, ResultCallback<ResultInfo<Boolean>> cb)
+```
 
 Parameter :
 
@@ -1016,10 +1090,10 @@ Code example:
 
 ```java
 SdkApi.getInstance().Display().getScreenOnoff(ApiTool.Screen.ALL,
-    new ResultCallback<ResultInfo<Boolean>>() {
-        @Override
-        public void onMsg(Boolean val) {
-        }
+new ResultCallback<ResultInfo<Boolean>>() {
+    @Override
+    public void onMsg(Boolean val) {
+    }
 })
 ```
 
@@ -1031,7 +1105,9 @@ If the motherboard has dual outputs, setting screen to all returns the current m
 
 Interface name:
 
+```java
 boolean setBrightness(int screen, int brightness)
+```
 
 Parameter :
 
@@ -1048,8 +1124,10 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret = SdkApi.getInstance().Display().setBrightness(
 ApiTool.Screen.ALL, 100)
+```
 
 Remarks :
 
@@ -1059,7 +1137,9 @@ Remarks :
 
 Interface name:
 
+```java
 void getBrightness(int screen, ResultCallback<ResultInfo<Integer>> cb)
+```
 
 Parameter :
 
@@ -1078,10 +1158,10 @@ Code example:
 
 ```java
 SdkApi.getInstance().Display().getBrightness(ApiTool.Screen.ALL,
-    new ResultCallback<ResultInfo<Integer>>() {
+new ResultCallback<ResultInfo<Integer>>() {
     @Override
-        public void onMsg(Integer val) {
-        }
+    public void onMsg(Integer val) {
+    }
 })
 ```
 
@@ -1093,7 +1173,9 @@ If the motherboard has dual outputs, setting screen to all returns the current m
 
 Interface name:
 
+```java
 void getResolution(int screen, ResultCallback<ResultInfo<String>> cb )
+```
 
 Parameter :
 
@@ -1112,10 +1194,10 @@ Code example:
 
 ```java
 SdkApi.getInstance().Display().getResolution(ApiTool.Screen.ALL,
-    new ResultCallback<ResultInfo<String>>() {
-        @Override
-        public void onMsg(String val) {
-        }
+new ResultCallback<ResultInfo<String>>() {
+    @Override
+    public void onMsg(String val) {
+    }
 })
 ```
 
@@ -1131,7 +1213,9 @@ If the motherboard has dual outputs, setting screen to all returns the current m
 
 Interface name:
 
+```java
 void deviceReboot()
+```
 
 Parameter :
 
@@ -1143,7 +1227,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemCtrl().deviceReboot()
+```
 
 Remarks :
 
@@ -1153,7 +1239,9 @@ Remarks :
 
 Interface name:
 
+```java
 void shotScreen(String path, int screen, ResultCallback<Boolean> cb)
+```
 
 Parameter :
 
@@ -1173,9 +1261,9 @@ Code example:
 
 ```java
 SdkApi.getInstance().SystemCtrl().shotScreen("/mnt/sdcard/1.png", 0 , new ResultCallback<ResultInfo<Boolean>>() {
-        @Override
-        public void onMsg( Boolean val) {
-        }
+    @Override
+    public void onMsg( Boolean val) {
+    }
 })
 ```
 
@@ -1187,7 +1275,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setStatusBarDisplay(boolean display)
+```
 
 Parameter :
 
@@ -1201,7 +1291,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemCtrl().setStatusBarDisplay(false)
+```
 
 Remarks :
 
@@ -1213,7 +1305,9 @@ This interface is being phased out
 
 Interface name:
 
+```java
 boolean getStatusBarDisplay()
+```
 
 Parameter :
 
@@ -1227,7 +1321,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemCtrl().getStatusBarDisplay()
+```
 
 Remarks :
 
@@ -1239,7 +1335,9 @@ This interface is being phased out
 
 Interface name:
 
+```java
 void setStatusBarDisplay2(boolean display)
+```
 
 Parameter :
 
@@ -1253,7 +1351,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemCtrl().setStatusBarDisplay2(false)
+```
 
 Remarks :
 
@@ -1263,7 +1363,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean getStatusBarDisplay2()
+```
 
 Parameter :
 
@@ -1277,7 +1379,9 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret = SdkApi.getInstance().SystemCtrl().getStatusBarDisplay2()
+```
 
 Remarks :
 
@@ -1287,7 +1391,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setNavigationBar(boolean display)
+```
 
 Parameter :
 
@@ -1301,7 +1407,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemCtrl().setNavigationBar(false)
+```
 
 Remarks :
 
@@ -1311,7 +1419,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean getNavigationBar()
+```
 
 Parameter :
 
@@ -1325,8 +1435,10 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret =
 SdkApi.getInstance().SystemCtrl().getNavigationBar()
+```
 
 Remarks :
 
@@ -1336,7 +1448,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setDeviceShallowOnoff(boolean onoff)
+```
 
 Parameter :
 
@@ -1350,7 +1464,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemCtrl().setDeviceShallowOnoff( true )
+```
 
 Remarks :
 
@@ -1360,7 +1476,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean getDeviceShallowOnoff()
+```
 
 Parameter :
 
@@ -1374,7 +1492,9 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret =  SdkApi.getInstance().SystemCtrl().getDeviceShallowOnoff()
+```
 
 Remarks :
 
@@ -1384,7 +1504,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setDeviceDeepStandby()
+```
 
 Parameter :
 
@@ -1396,7 +1518,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().setDeviceDeepStandby()
+```
 
 Remarks :
 
@@ -1410,7 +1534,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setDeviceDeepStandby(int time)
+```
 
 Parameter :
 
@@ -1437,7 +1563,9 @@ Remarks :
 
 Interface name:
 
+```java
 void silentInstallApk(String path, boolean isAuto, ResultCallback<ResultInfo<Boolean>> cb)
+```
 
 Parameter :
 
@@ -1473,7 +1601,9 @@ When the installation file is stored on a USB drive, unplugging it after app ins
 
 Interface name:
 
+```java
 void silentInstallApkForPackage(String path, String packageName, boolean isAuto, ResultCallback<ResultInfo<Boolean>> cb)
+```
 
 Parameter :
 
@@ -1508,7 +1638,9 @@ Remarks :
 
 Interface name:
 
+```java
 void silentUninstallApk(String packageName, ResultCallback<ResultInfo<Boolean>> cb)
+```
 
 Parameter :
 
@@ -1543,7 +1675,9 @@ Remarks :
 
 Interface name:
 
+```java
 int recoverySystem(int Type)
+```
 
 Parameter :
 
@@ -1571,7 +1705,9 @@ Remarks :
 ### 4.17 Set Touch Function State
 
 Method Name:
+```java
 boolean setTouchState(int screenType, String pid, String vid, int state)
+```
 
 Parameters:
 
@@ -1605,7 +1741,9 @@ When set to 1 or 2, locate the touch panel by PID and VID, then enable or disabl
 ### 4.18 Get Touch Function State
 
 Method Name:
+```java
 int getTouchState(int screenType, String pid, String vid)
+```
 
 Parameters:
 
@@ -1653,7 +1791,9 @@ The boot time equals the shutdown time. This invalid setting maintains the curre
 
 Interface name:
 
+```java
 void setTimerSwitchOnoff(boolean onoff)
+```
 
 Parameter :
 
@@ -1667,7 +1807,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().TimerSwitch().setTimerSwitchOnoff(true)
+```
 
 Remarks :
 
@@ -1677,7 +1819,9 @@ The timer starts 2 minutes after the device is powered on or the system restarts
 
 Interface name:
 
+```java
 boolean getTimerSwitchOnoff()
+```
 
 Parameter :
 
@@ -1691,8 +1835,10 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret =
 SdkApi.getInstance().TimerSwitch().getTimerSwitchOnoff()
+```
 
 Remarks :
 
@@ -1702,7 +1848,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean setTimerOnTime(String onTime)
+```
 
 Parameter :
 
@@ -1718,8 +1866,10 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret =
 SdkApi.getInstance().TimerSwitch().setTimerOnTime("12:01")
+```
 
 Remarks :
 
@@ -1729,7 +1879,9 @@ Remarks :
 
 Interface name:
 
+```java
 void clearTimerOnTime()
+```
 
 Parameter :
 
@@ -1741,7 +1893,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().TimerSwitch().clearTimerOnTime()
+```
 
 Remarks :
 
@@ -1751,7 +1905,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getTimerOnTime()
+```
 
 Parameter :
 
@@ -1765,7 +1921,9 @@ Returned value :
 
 Code example:
 
+```java
 String time =  SdkApi.getInstance().TimerSwitch().getTimerOnTime()
+```
 
 Remarks :
 
@@ -1775,7 +1933,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean setTimerOffTime(String offTime)
+```
 
 Parameter :
 
@@ -1791,8 +1951,10 @@ Returned value :
 
 Code example:
 
+```java
 boolean ret =
 SdkApi.getInstance().TimerSwitch().setTimerOffTime("12:01")
+```
 
 Remarks :
 
@@ -1802,7 +1964,9 @@ Remarks :
 
 Interface name:
 
+```java
 void clearTimerOffTime()
+```
 
 Parameter :
 
@@ -1814,7 +1978,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().TimerSwitch().clearTimerOffTime()
+```
 
 Remarks :
 
@@ -1824,7 +1990,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getTimerOffTime()
+```
 
 Parameter :
 
@@ -1857,7 +2025,9 @@ Function: Watchdog reset. By default, the SDK performs watchdog feeding. When th
 
 Interface name:
 
+```java
 boolean setWatchdogOnoff(boolean onoff)
+```
 
 Parameter :
 
@@ -1873,7 +2043,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().Watchdog().setWatchdogOnoff(true)
+```
 
 Remarks :
 
@@ -1883,7 +2055,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean getWatchdogOnoff()
+```
 
 Parameter :
 
@@ -1897,7 +2071,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().Watchdog ().get WatchdogOnoff ()
+```
 
 Remarks :
 
@@ -1907,7 +2083,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean setWatchdogTimeout(int timeout)
+```
 
 Parameter :
 
@@ -1923,8 +2101,10 @@ Returned value :
 
 Code example:
 
+```java
 Set the dog feeding timeout to 60 seconds
 SdkApi.getInstance().Watchdog().setWatchdogTimeout(60)
+```
 
 Remarks :
 
@@ -1934,7 +2114,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean feedWatchdog()
+```
 
 Parameter :
 
@@ -1948,7 +2130,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().Watchdog ().feedWatchdog ()
+```
 
 Remarks :
 
@@ -1962,7 +2146,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setSystemTime(long time)
+```
 
 Parameter :
 
@@ -1976,7 +2162,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemTime().setSystemTime(60*1000*1000)
+```
 
 Remarks :
 
@@ -1986,7 +2174,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getRtcTime()
+```
 
 Parameter :
 
@@ -2015,7 +2205,9 @@ Remarks :
 
 Interface name:
 
+```java
 void setAutoTimeOnoff(boolean onoff)
+```
 
 Parameter :
 
@@ -2029,7 +2221,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemTime().setAutoTimeOnoff(true)
+```
 
 Remarks :
 
@@ -2039,7 +2233,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean getAutoTimeOnoff()
+```
 
 Parameter :
 
@@ -2053,7 +2249,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().SystemTime().getAutoTimeOnoff()
+```
 
 Remarks :
 
@@ -2067,7 +2265,9 @@ Remarks :
 
 Interface name:
 
+```java
 int getGpioInput(int group, int num)
+```
 
 Parameter :
 
@@ -2098,7 +2298,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean setGpioOutput(int group, int num, boolean level)
+```
 
 Parameter :
 
@@ -2132,7 +2334,9 @@ Remarks :
 
 Interface name:
 
+```java
 int openSerial(String serialName, int baud)
+```
 
 Parameter :
 
@@ -2149,7 +2353,9 @@ Returned value :
 
 Code example:
 
+```java
 int serial Fd = SdkApi.getInstance().Hardware().openSerial("/dev/ttyS0", 115200);
+```
 
 Remarks :
 
@@ -2161,7 +2367,9 @@ Remarks :
 
 Interface name:
 
+```java
 int openSerial(String serialName, int baud,  int dataBits, int parity, int stopBits )
+```
 
 Parameter :
 
@@ -2181,7 +2389,9 @@ Returned value :
 
 Code example:
 
+```java
 int serialFd = SdkApi.getInstance().Hardware().openSerial("/dev/ttyS0", 115200,  8, 0, 1);
+```
 
 Remarks :
 
@@ -2191,7 +2401,9 @@ Remarks :
 
 Interface name:
 
+```java
 int closeSerial(int serial)
+```
 
 Parameter :
 
@@ -2207,7 +2419,9 @@ Returned value :
 
 Code example:
 
+```java
 int ret = SdkApi.getInstance().Hardware().closeSerial(serial);
+```
 
 Remarks :
 
@@ -2217,7 +2431,9 @@ Remarks :
 
 Interface name:
 
+```java
 int readSerial(int serial, byte[] buf, int len)
+```
 
 Parameter :
 
@@ -2235,7 +2451,9 @@ Returned value :
 
 Code example:
 
+```java
 int readLen = SdkApi.getInstance().Hardware().readSerial(serial, buf, len);
+```
 
 Remarks :
 
@@ -2245,7 +2463,9 @@ Remarks :
 
 Interface name:
 
+```java
 int writeSerial(int serial, byte[] buf, int len)
+```
 
 Parameter :
 
@@ -2276,7 +2496,9 @@ Remarks :
 
 Interface name:
 
+```java
 int getSerialPortOnOff(String serialName)
+```
 
 Parameter:
 
@@ -2292,7 +2514,9 @@ Returned value:
 
 Code example:
 
+```java
 int ret = SdkApi.getInstance().Hardware().getSerialPortOnOff("/dev/ttyS0");
+```
 
 Remarks :
 
@@ -2302,7 +2526,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean setSerialPortOnOff(String serialName, Boolean onOff);
+```
 
 Parameter:
 
@@ -2319,7 +2545,9 @@ Returned value:
 
 Code example:
 
+```java
 boolean ret = SdkApi.getInstance().Hardware().setSerialPortOnOff("/dev/ttyS0", true);
+```
 
 Remarks :
 
@@ -2328,7 +2556,9 @@ Remarks :
 ### 8.10 Query USB Port Number
 
 Method Name:
+```java
 int getUsbPortNumber(String pid, String vid);
+```
 
 Parameters:
 
@@ -2343,8 +2573,9 @@ Return Value:
 | :--- | :--- | :--- |
 | Return Value | int | Port number |
 
-```java
 Code Example:
+
+```java
 int ret = SdkApi.getInstance().Hardware().getUsbPortNumber("1000", "1001");
 ```
 
@@ -2356,7 +2587,9 @@ Remarks :
 
 Interface name:
 
+```java
 boolean setUsbPortPowerOnoff(int usbPort, boolean onoff)
+```
 
 Parameter :
 
@@ -2371,13 +2604,19 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().Hardware().setUsbPortPowerOnoff(port, true);
+```
 
 Remarks :
 
 E USB Serial Number:
 
+![SC1 / SK1 / SK1-15 GMS SdkApi Detailed Reference - gms-image4.png](./images/gms-image4.png)
+
 3576-U USB Serial Number:
+
+![SC1 / SK1 / SK1-15 GMS SdkApi Detailed Reference - gms-image5.png](./images/gms-image5.png)
 
 ### Other related APIs
 
@@ -2387,7 +2626,9 @@ E USB Serial Number:
 
 Interface name:
 
+```java
 String getSimICCID()
+```
 
 Parameter :
 
@@ -2401,7 +2642,9 @@ Returned value :
 
 Code example:
 
+```java
 String iccid = SdkApi.getInstance().Other().getSimICCID();
+```
 
 Remarks :
 
@@ -2411,7 +2654,9 @@ The SIM card must be properly inserted into the 4G module.
 
 Interface name:
 
+```java
 String getModemIMEI()
+```
 
 Parameter :
 
@@ -2425,7 +2670,9 @@ Returned value :
 
 Code example:
 
+```java
 String imei = SdkApi.getInstance().Other().getModemIMEI();
+```
 
 Remarks :
 
@@ -2435,7 +2682,9 @@ The SIM card must be properly inserted into the 4G module.
 
 Interface name:
 
+```java
 void execShellCommand(String cmd)
+```
 
 Parameter :
 
@@ -2462,7 +2711,9 @@ Remarks :
 
 Interface name:
 
+```java
 String getEmmcLeftTime()
+```
 
 Parameter :
 
@@ -2476,7 +2727,9 @@ Returned value :
 
 Code example:
 
+```java
 String leftTime = SdkApi.getInstance().Other().getEmmcLeftTime();
+```
 
 Remarks :
 
@@ -2488,7 +2741,9 @@ Remarks :
 
 Interface name:
 
+```java
 int registerCommonListener(int appId, ISdkCommonListener listener)
+```
 
 Parameter :
 
@@ -2508,16 +2763,16 @@ Code example:
 ```java
 int registerCommonListener(ApiTool.CommonAppId.ID_APP_CUSTOM, new ISdkCommonListener() { });
 private ISdkCommonListener commonListener = new ISdkCommonListener.Stub() {
-        @Override
-        public void CommonListenerNotify(int actionId, String sVal, int[] iArray, int intArrayLen) throws RemoteException {
-            if (actionId == ApiTool.CommonEvent.SWITCH_ETH) {
+    @Override
+    public void CommonListenerNotify(int actionId, String sVal, int[] iArray, int intArrayLen) throws RemoteException {
+        if (actionId == ApiTool.CommonEvent.SWITCH_ETH) {
             //Set Ethernet switch result
-            }
         }
-        @Override
-        public IBinder asBinder() {
-            return super.asBinder();
-        }
+    }
+    @Override
+    public IBinder asBinder() {
+        return super.asBinder();
+    }
 };
 ```
 
@@ -2529,7 +2784,9 @@ Remarks :
 
 Interface name:
 
+```java
 int unregisterCommonListener(int appId, ISdkCommonListener listener)
+```
 
 Parameter :
 
@@ -2546,7 +2803,9 @@ Returned value :
 
 Code example:
 
+```java
 int unregisterCommonListener(ApiTool.CommonAppId.ID_APP_CUSTOM, listener);
+```
 
 Remarks :
 
@@ -2556,7 +2815,9 @@ Remarks :
 
 Interface name:
 
+```java
 int setCommonEvent(int appId, int actionId, String strParam, int[] dataArray, int arrayLen)
+```
 
 Parameter :
 
@@ -2614,9 +2875,13 @@ The callback is triggered after executing setCommonEvent, enabling interfaces wi
 
 ### 10.5 CommonEvent Usage
 
+![SC1 / SK1 / SK1-15 GMS SdkApi Detailed Reference - gms-image6.png](./images/gms-image6.png)
+
 ### 10.6 Interface Call Usage Example
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, actionId, params, dataArray, dataArray.length());
+```
 
 parameter declaration :
 
@@ -2749,7 +3014,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, SWITCH_ETH, params, dataArray, dataArray.length());
+```
 
 Remarks :
 
@@ -2771,13 +3038,13 @@ The class structure of the parameters
 
 ```java
 classApInfo{
-bool switchONOff; //Function switch
+    bool switchONOff; //Function switch
     String apName; //AP name
-bool apIp; // specifies the IP
-String password; //AP password
+    bool apIp; // specifies the IP
+    String password; //AP password
     boolean offWhenNoDeviceConn;
     /*
-*Security Type
+    *Security Type
     *SECURITY_Type_OPEN = 0
     *SECURITY_Type_WPA2_PSK = 1
     *SECURITY_Type_WPA3_SAE_TRANSITION = 2
@@ -2785,7 +3052,7 @@ String password; //AP password
     */
     private int pwType;
     /*
-* tape width
+    * tape width
     *BAND_2GHZ = 1 << 0
     *BAND_5GHZ = 1 << 1
     *BAND_6GHZ = 1 << 2
@@ -2801,7 +3068,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, SWITCH_AP, params, dataArray, dataArray.length());
+```
 
 Remarks :
 
@@ -2827,7 +3096,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, GET_ETH_STATUS, params, dataArray, dataArray.length());
+```
 
 Remarks :
 
@@ -2849,8 +3120,8 @@ The class structure of the parameters
 
 ```java
 class IpInfo{
-String_iface; //Network interface name, such as eth0
-bool isStatic; //true: static IP mode false: DHCP
+    String_iface; //Network interface name, such as eth0
+    bool isStatic; //true: static IP mode false: DHCP
     String ipAddr;
     String mask;
     String gate;
@@ -2867,7 +3138,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, SET_ETH_IP, params, dataArray, dataArray.length());
+```
 
 Remarks :
 
@@ -2893,7 +3166,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, GET_ETH_INFO, params, dataArray, dataArray.length());
+```
 
 Remarks :
 
@@ -2919,7 +3194,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, UPDATE_SYSTEM_OTA, params, dataArray, dataArray.length());
+```
 
 Remarks :
 
@@ -2942,16 +3219,16 @@ The class structure of the parameters
 ```java
 class LogoInfo{
     int Type;    //0:animation  1:logo  2:wallpaper
-String orientation; //horizontal: landscape vertical: portrait
-String file path; //Absolute path to the file
+    String orientation; //horizontal: landscape vertical: portrait
+    String file path; //Absolute path to the file
     int fileType;        //0:image 1:zip  2:video
-int actionType; //0: Import 1: Clear imported files
+    int actionType; //0: Import 1: Clear imported files
 }
 pay attention to :
 --logo only supports
-  zip and mp4 [h264 or h265] files
-  >> Maximum file size 60MB
-  The maximum resolution is 4K, subject to the actual capabilities of the board.
+zip and mp4 [h264 or h265] files
+>> Maximum file size 60MB
+The maximum resolution is 4K, subject to the actual capabilities of the board.
 ```
 
 Returned value :
@@ -2962,7 +3239,9 @@ Returned value :
 
 Code example:
 
+```java
 SdkApi.getInstance().CommonEvent().setCommonEvent(AppId, UPDATE_SYSTEM_ANIMATION, params, dataArray, dataArray.length());
+```
 
 Remarks :
 
